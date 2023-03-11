@@ -14,7 +14,7 @@ const StartElection=()=> {
 
   
 
-  let account="0x2c0c264ac767916891d305F91F80Ea04949b43DB"
+  let account="0x255517f4a2a1d0420F71b034CD6289f813Ac18f4"
 
   useEffect(()=>{
 
