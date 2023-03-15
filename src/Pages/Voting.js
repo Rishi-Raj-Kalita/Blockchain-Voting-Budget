@@ -19,7 +19,6 @@ const Voting=()=>{
     const [tableData, setTableData] = useState([]);
 
 
-
     
       // for multiple budgets how to vote???? Authentication logic???
 
@@ -88,8 +87,8 @@ const Voting=()=>{
 
     return (
         <div>
-          <h1>My Page</h1>
-          <h2>Subtitle</h2>
+          <h1>Vote</h1>
+          <h2>Budget Details</h2>
           <form >
             <table>
               <thead>
@@ -122,9 +121,9 @@ const Voting=()=>{
             </table>
       
           </form>
-          <input type="text" value={index} onChange={(event)=>setIndex(event.target.value)} />
-            <input type="text" value={tokens} onChange={(event)=>setTokens(event.target.value)} />
-            <button type="submit" onClick={()=>vote()}>Submit</button>
+          <input type="text" value={index} placeholder="Enter Index" onChange={(event)=>setIndex(event.target.value)} />
+          <input type="text" value={tokens} placeholder="Enter Token Amount" onChange={(event)=>setTokens(event.target.value)} />
+          <button type="submit" onClick={()=>vote()}>Submit</button>
         </div>
       );
 }

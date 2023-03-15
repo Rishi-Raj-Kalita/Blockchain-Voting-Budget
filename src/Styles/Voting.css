@@ -1,76 +1,97 @@
 /* Set default font family and size */
 body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-  }
-  
-  /* Center the page content */
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  /* Style the page title */
-  h1 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  /* Style the page subtitle */
-  h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  /* Style the form inputs */
-  input {
-    padding: 5px;
-    margin-right: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  /* Style the table */
-  table {
-    border-collapse: collapse;
-    margin-top: 20px;
-    scale: 0.5;
-  }
-  
-  /* Style the table headers */
-  thead th {
-    font-weight: bold;
-    background-color: #ccc;
-    border: 1px solid #000;
-    padding: 5px;
-    text-align: center;
-  }
-  
-  /* Style the table cells */
-  tbody td {
-    border: 1px solid #000;
-    padding: 5px;
-    text-align: center;
-  }
-  
-  /* Style the submit button */
-  button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    margin-top: 20px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  /* Style the submit button on hover */
-  button[type="submit"]:hover {
-    background-color: #0062cc;
-    scale: 4;
-  }
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  background-color: #efeeee;
+  margin: 10px 100px 0px 30px;
+  padding: 0;
+  scale: 1;
+}
+
+/* Center the page content */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* Style the page title */
+h1 {
+  font-size: 68px;
+  font-weight: bold;
+  margin: 20px 180px 40px 0px;
+  text-align: left;
+  color: rgb(9, 55, 109);
+}
+
+/* Style the page subtitle */
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0px 20px 30px 0;
+  text-align: center;
+  width: 150%;
+  color: rgb(38, 38, 38);
+}
+
+/* Style the form inputs */
+input[type="text"] {
+  padding: 10px;
+  margin-right: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  width: 200px;
+  height: 20px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the table */
+table {
+  border-collapse: collapse;
+  margin-bottom: 100px;
+  width: 150%;
+}
+
+/* Style the table headers */
+thead th {
+  font-weight: bold;
+  background-color: #f7f7f7;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  text-align: center;
+  color: #333;
+  font-size: 18px;
+}
+
+/* Style the table cells */
+tbody td {
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  text-align: center;
+  color: #555;
+  font-size: 16px;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 40px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+/* Style the submit button on hover */
+button[type="submit"]:hover {
+  background-color: #0062cc;
+}
