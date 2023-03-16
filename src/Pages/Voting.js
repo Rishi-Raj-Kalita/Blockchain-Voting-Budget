@@ -49,9 +49,9 @@ const Voting=()=>{
           // document.getElementById("vote-" + candidate).innerText = votes;
       }
 
-      let ballotAddress= "0xDa72974eD69e407Baf39FCf7ec88e247dD2ce6d4"
+      let ballotAddress= "0xD32348aae59Aa5F85C1dfA4A2667fa214F5a5594"
 
-      let account = "0x7CF40F19671582f08a6a651624DCd4124caB1cf7"
+      let account = "0xcEA8Bc885e7E39cBD973DfEC0930eA73966a615c"
 
      useEffect(()=>{
         const getData=async()=>{
