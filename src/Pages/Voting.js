@@ -18,6 +18,7 @@ const Voting=()=>{
     const [amount,setAmount]=useState("")
     const [postedBy,setPostedBy]=useState("")
     const [index,setIndex]=useState("")
+    const [inputInvalid, setInputInvalid]=useState(false);
     const [tableData, setTableData] = useState([]);
 
 
@@ -29,10 +30,22 @@ const Voting=()=>{
     
       const handleInputChange1 = (event) => {
         setBudgetIndex(event.target.value);
+        setInputInvalid(false);
       };
     
       const handleInputChange2 = (event) => {
         setTokens(event.target.value);
+        setInputInvalid(false);
+      };
+
+      const handleSubmit = (event) => {
+        event.preventDefault();
+        if (index.trim() === '' || tokens.trim() === '') {
+          setInputInvalid(true);
+        } else {
+          // do something else if input is not empty
+          vote();
+        }
       };
 
       const vote=async()=>{
@@ -106,7 +119,9 @@ const Voting=()=>{
                             const newData = [...tableData];
                             newData[rowIndex][colIndex] = event.target.value;
                             setTableData(newData);
-                          }}
+                          }
+                        }
+                        readOnly
                         />
                       </td>
                     ))}
@@ -116,9 +131,13 @@ const Voting=()=>{
             </table>
       
           </form>
-          <input type="text" value={index} placeholder="Enter Index" onChange={(event)=>setIndex(event.target.value)} />
-          <input type="text" value={tokens} placeholder="Enter Token Amount" onChange={(event)=>setTokens(event.target.value)} />
-          <button type="submit" onClick={()=>vote()}>Submit</button>
+          <input type="text" value={index} placeholder="Enter Index" onChange={(event)=>{setIndex(event.target.value);
+          setInputInvalid(false) }}
+                          className={inputInvalid ? 'red-border' : ''} />
+          <input type="text" value={tokens} placeholder="Enter Token Amount" onChange={(event)=>{setTokens(event.target.value)
+          setInputInvalid(false) }} 
+                          className={inputInvalid ? 'red-border' : ''} />
+          <button type="submit" onClick={handleSubmit}>Submit</button>
         </div>
       );
 }
