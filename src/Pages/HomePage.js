@@ -1,6 +1,6 @@
 const HomePage=()=>{
     return(<>
-    <h1>Hello election</h1>
+    <h1>Election Homepage</h1>
     </>)
 }
 

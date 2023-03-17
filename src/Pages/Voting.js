@@ -2,6 +2,8 @@ import "../Styles/Voting.css"
 import {useEffect, useState} from 'react'
 import bytecode from "../Contract/bytecode"
 import ballotAbi from "../Contract/ballotAbi"
+import admin from "../Contract/adminAddress"
+import ballotAddress from "../Contract/ballotAddress"
 const Web3 = require("web3")
 
 // ballot address 
@@ -36,29 +38,22 @@ const Voting=()=>{
       const vote=async()=>{
         console.log("tokens",tokens)
         const BallotContract= new web3.eth.Contract(ballotAbi,ballotAddress)
-        const voting= await BallotContract.methods.vote(tokens).send({from : account, gas: 6000000})
-        const currBudget= await BallotContract.methods.currBudget().call({from:account,gas:6000000});
+        const voting= await BallotContract.methods.vote(tokens).send({from : admin, gas: 6000000})
+        const currBudget= await BallotContract.methods.currBudget().call({from:admin,gas:6000000});
 
         const vote=currBudget.voteCount;
 
-        console.log("votes",vote)
+        // console.log("votes",vote)
 
-        // BallotContract.vote()
-      
-          // Updates the vote element.
-          // document.getElementById("vote-" + candidate).innerText = votes;
       }
 
-      let ballotAddress= "0xD32348aae59Aa5F85C1dfA4A2667fa214F5a5594"
-
-      let account = "0xcEA8Bc885e7E39cBD973DfEC0930eA73966a615c"
-
+  
      useEffect(()=>{
         const getData=async()=>{
             const BallotContract= new web3.eth.Contract(ballotAbi,ballotAddress)
             
             console.log(BallotContract.methods)
-            const currBudget= await BallotContract.methods.currBudget().call({from:account,gas:6000000});
+            const currBudget= await BallotContract.methods.currBudget().call({from:admin,gas:6000000});
 
             const budget=currBudget.budgetTitle;
             const amount=currBudget.amount;

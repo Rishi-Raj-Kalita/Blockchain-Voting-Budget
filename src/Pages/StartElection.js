@@ -2,6 +2,7 @@ import "../Styles/StartElection.css"
 import {useEffect, useState} from 'react'
 import bytecode from "../Contract/bytecode"
 import abi from "../Contract/contractAbi"
+import admin from "../Contract/adminAddress"
 const Web3 = require("web3")
 
 
@@ -12,10 +13,6 @@ const StartElection=()=> {
     const [contractAddress,setContactAddress]=useState("");
     const [time,setTime]=useState("");
 
-  
-
-  let account="0xaF241C9FefF01772d75398c698B3a92D846382E5"
-
   useEffect(()=>{
 
     let Electioncreationcontract = new web3.eth.Contract(abi);
@@ -25,7 +22,7 @@ const StartElection=()=> {
     }
 
     let parameter = {
-        from: account,
+        from: admin,
         gas: Web3.utils.toHex(5000000),
         gasPrice: Web3.utils.toHex(Web3.utils.toWei('30', 'gwei'))
         }
@@ -51,8 +48,8 @@ const StartElection=()=> {
     // console.log("time=",time)
     let Electioncreationcontract= new web3.eth.Contract(abi,contractAddress)
     Electioncreationcontract.options.address=contractAddress
-    const results=await Electioncreationcontract.methods.startElect("incand","20","gymkhana",time).send({from : account, gas: 6000000})
-    let ballots=await Electioncreationcontract.methods.getDeployedBallots().call({from : account, gas: 6000000});
+    const results=await Electioncreationcontract.methods.startElect("incand","20","gymkhana",600,time).send({from : admin, gas: 6000000})
+    let ballots=await Electioncreationcontract.methods.getDeployedBallots().call({from : admin, gas: 6000000});
   
     console.log("ballots=",ballots)
 

@@ -1,0 +1,3 @@
+const ballotAddress="0x355a463c82dfe9470c1fEc11D811aF4D666f5dBe";
+
+export default ballotAddress
