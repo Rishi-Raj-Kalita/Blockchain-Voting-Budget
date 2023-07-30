@@ -1,4 +1,4 @@
-import "../Styles/Voting.css"
+
 import {useEffect, useState} from 'react'
 import bytecode from "../Contract/bytecode"
 import ballotAbi from "../Contract/ballotAbi"
@@ -27,16 +27,6 @@ const Voting=()=>{
 
       const [budgetIndex, setBudgetIndex] = useState('');
       const [tokens, setTokens] = useState('');
-    
-      const handleInputChange1 = (event) => {
-        setBudgetIndex(event.target.value);
-        setInputInvalid(false);
-      };
-    
-      const handleInputChange2 = (event) => {
-        setTokens(event.target.value);
-        setInputInvalid(false);
-      };
 
       const handleSubmit = (event) => {
         event.preventDefault();

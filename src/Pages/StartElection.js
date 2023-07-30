@@ -1,4 +1,4 @@
-import "../Styles/StartElection.css"
+
 import {useEffect, useState} from 'react'
 import bytecode from "../Contract/bytecode"
 import abi from "../Contract/contractAbi"

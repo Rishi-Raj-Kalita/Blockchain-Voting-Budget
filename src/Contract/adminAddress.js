@@ -1,3 +1,3 @@
-const admin="0x68a07B334d9E78cf1E5704d109665706ca79CF33"
+const admin="0x8b2773629Ef24AE7883aCDCc24dc60E177Fed8D9"
 
 export default admin
